@@ -1,0 +1,18 @@
+[
+  {
+    "name": "布丁",
+    "city": "台北",
+    "avatar": "avatars/pudding.jpg",
+    "audio": "audio/pudding.mp3",
+    "wish": "主包生日快乐~要每天开开心心健健康康的呀(=^▽^=)",
+    "poem": "希望月亮记得替我们照顾你，让你每天都能开开心心、健健康康地唱着喜欢的歌。"
+  },
+  {
+    "name": "星河",
+    "city": "北京",
+    "avatar": "avatars/starriver.jpg",
+    "audio": "audio/starriver.mp3",
+    "wish": "谢谢你陪我度过很多失眠的夜晚",
+    "poem": "那些有你歌声的夜晚，都成了会发光的回忆。"
+  }
+]
