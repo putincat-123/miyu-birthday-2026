@@ -33,6 +33,11 @@
 <section class="final"><div class="moon"></div><h2>谜屿，生日快乐</h2><p>愿今夜所有回响，都成为你新一岁路上的星光。<br>2026.07.02 · 夏夜生日派对</p></section><footer>本礼物由粉丝与 AI 共同创作</footer>
 </main>
 <script>
+window.onerror = function(message, source, lineno, colno, error) {
+
+  alert("JS错误：第 " + lineno + " 行\n" + message);
+
+};
 let data=[];const sample=[{"name":"布丁","city":"台北","avatar":"avatars/pudding.jpg","audio":"audio/pudding.mp3","wish":"主包生日快乐~要每天开开心心健健康康的呀(=^▽^=)","poem":"希望月亮记得替我们照顾你，让你每天都能开开心心、健健康康地唱着喜欢的歌。"},{"name":"星河","city":"北京","avatar":"avatars/starriver.jpg","audio":"audio/starriver.mp3","wish":"谢谢你陪我度过很多失眠的夜晚","poem":"那些有你歌声的夜晚，都成了会发光的回忆。"}];
 const cityPos={"北京":{x:55,y:35},"上海":{x:70,y:55},"广州":{x:60,y:73},"成都":{x:42,y:58},"杭州":{x:66,y:60},"武汉":{x:54,y:57},"西安":{x:45,y:47},"台北":{x:73,y:72},"深圳":{x:61,y:76},"重庆":{x:46,y:60},"长沙":{x:55,y:64}};const $=id=>document.getElementById(id);
 function toast(t){$("toast").textContent=t;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2200)}
