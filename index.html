@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>给谜屿的生日礼物｜来自世界的回响</title>
+<title>给谜屿的生日礼物｜来自各地的回响</title>
 <style>
 :root{--bg:#070816;--bg2:#17112b;--text:#fff8ec;--muted:rgba(255,248,236,.72);--gold:#ffd98a;--pink:#ff8fc7;--cyan:#86ecff;--line:rgba(255,255,255,.16)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:radial-gradient(circle at 12% 8%,rgba(255,143,199,.25),transparent 28%),radial-gradient(circle at 86% 12%,rgba(134,236,255,.18),transparent 30%),linear-gradient(180deg,var(--bg),var(--bg2) 48%,#070711);overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.82) 0 1px,transparent 1.6px);background-size:120px 120px;opacity:.32;animation:drift 25s linear infinite}@keyframes drift{to{transform:translate(-70px,90px)}}
@@ -20,7 +20,7 @@
 </style>
 </head>
 <body>
-<div class="loader"><div class="loaderCard"><h1>给谜屿的生日礼物<br>来自世界的回响</h1><p>正在收集散落在星空里的祝福</p></div></div>
+<div class="loader"><div class="loaderCard"><h1>给谜屿的生日礼物<br>来自各地的回响</h1><p>正在收集散落在星空里的祝福</p></div></div>
 <button class="adminBtn" id="adminBtn">⚙ 管理</button>
 <div class="adminPanel" id="adminPanel"><div class="adminInner"><h2>管理模式｜Poem Prompt 生成器</h2><p>这里会读取目前的 <b>data/blessings.json</b>，帮你生成批次 Poem Prompt。复制后贴进 GPT，再把 GPT 产出的 poem 更新回 blessings.json。</p><textarea id="promptBox" readonly></textarea><div class="adminActions"><button id="makePromptBtn">生成批次 Poem Prompt</button><button id="selectPromptBtn">全选 Prompt</button><button class="secondary" id="reloadBtn">重新读取资料</button><button class="secondary" id="closeAdminBtn">关闭</button></div><p class="smallNote">进入管理模式方式：网址后加 <b>?admin=1</b>，例如 /miyu-birthday-2026/?admin=1。正式分享给粉丝时不要加这个参数即可。</p></div></div>
 <div class="toast" id="toast"></div>
