@@ -1,19 +1,27 @@
-# FM05.18｜来自各地的回响 V3 Lite
+# FM05.18｜来自各地的回响 V4
 
 上传到 GitHub Pages 根目录即可。
 
-主要文件：
+结构：
 - index.html
 - data/blessings.json
-- audio/
-- avatars/
+- audio/wish-01.m4a ... audio/wish-15.m4a
 
-录音文件命名已预留：
-- audio/wish-03.mp3
-- audio/wish-04.mp3
-- audio/wish-06.mp3
-- audio/wish-10.mp3
-- audio/wish-12.mp3
-- audio/wish-15.mp3
+V4 特色：
+- 左侧只保留地图，不再重复城市列表。
+- 右侧初始是未拆信封。
+- 点击城市后显示该城市所有生日信。
+- 点击粉丝信封后才展开祝福。
+- 播放完成后标记为已拆阅。
 
-没有录音的祝福会使用浏览器文字转语音 AI 代念。
+
+## V4.2 BGM 说明
+
+请上传一段温柔背景音乐到：
+
+```text
+audio/bgm.mp3
+```
+
+建议选择无版权的轻柔钢琴 / 海浪环境音，音量不要太大。  
+网页会在第一次点击城市后尝试播放 BGM；播放祝福时会自动降低 BGM 音量，祝福结束后恢复。
