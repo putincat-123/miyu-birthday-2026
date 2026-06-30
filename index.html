@@ -1,111 +1,276 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-<title>FM05.18｜来自各地的回响</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>给谜屿的生日礼物｜来自世界的回响</title>
 <style>
-:root{--text:#fff8ec;--muted:rgba(255,248,236,.72);--gold:#ffd98a;--pink:#ff7eac;--line:rgba(255,255,255,.16);--paper:#f6e9d5;--paperText:#342212}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--text);background:radial-gradient(circle at 18% 12%,rgba(255,126,172,.18),transparent 24%),radial-gradient(circle at 82% 18%,rgba(134,236,255,.14),transparent 28%),linear-gradient(180deg,#050713,#071024 45%,#060711);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.42;background-image:radial-gradient(circle,rgba(255,255,255,.9) 0 1px,transparent 1.5px),radial-gradient(circle,rgba(255,217,138,.65) 0 1px,transparent 1.6px);background-size:120px 120px,190px 190px;animation:stars 28s linear infinite}@keyframes stars{to{transform:translate(-70px,80px)}}
-.app{position:relative;z-index:1;min-height:100vh;padding:22px;display:grid;grid-template-columns:minmax(540px,1fr) minmax(360px,500px);gap:18px}
-.stage{position:relative;min-height:calc(100vh - 44px);border-radius:34px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:rgba(5,8,18,.42);box-shadow:0 24px 80px rgba(0,0,0,.24)}
-.stage:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,7,18,.03),rgba(3,7,18,.2) 48%,rgba(3,7,18,.9)),radial-gradient(circle at 50% 80%,rgba(255,145,60,.45),transparent 8%),radial-gradient(circle at 13% 82%,rgba(255,217,138,.16),transparent 10%)}
-.header{position:absolute;left:0;right:0;top:0;z-index:5;text-align:center;padding:24px 18px 0}.kicker{color:var(--gold);letter-spacing:.32em;font-size:12px;text-shadow:0 0 14px rgba(255,217,138,.55)}.title{margin:4px 0 0;font-size:clamp(34px,4.2vw,62px);font-weight:900;color:#ffe8a8;text-shadow:0 0 16px rgba(255,217,138,.42),0 0 44px rgba(255,126,172,.16)}.subtitle{font-size:clamp(20px,2.5vw,34px);font-weight:800;letter-spacing:.08em}.desc{margin:10px auto 0;color:rgba(255,248,236,.84);max-width:560px;line-height:1.75;font-size:15px}
-.moon{position:absolute;right:15%;top:9%;width:82px;height:82px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff8da 0 18%,#ffe6a3 45%,#bb8b3e);box-shadow:0 0 28px rgba(255,217,138,.7),0 0 92px rgba(255,217,138,.3);z-index:2;opacity:.92}
-.string{position:absolute;left:4%;right:5%;top:9%;height:80px;border-top:2px solid rgba(255,217,138,.3);border-radius:50%;z-index:2}.string span{position:absolute;top:-6px;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 16px var(--gold)}.string span:nth-child(1){left:10%}.string span:nth-child(2){left:25%;top:5px}.string span:nth-child(3){left:42%;top:12px}.string span:nth-child(4){left:60%;top:11px}.string span:nth-child(5){left:80%;top:2px}
-.tent{position:absolute;left:4%;bottom:11%;width:142px;height:150px;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(135deg,rgba(255,217,138,.10),rgba(255,160,80,.045));border:1px solid rgba(255,217,138,.18);filter:drop-shadow(0 0 18px rgba(255,217,138,.12));z-index:2;opacity:.55}
-.fire{position:absolute;left:50%;bottom:6.5%;width:128px;height:128px;transform:translateX(-50%);filter:drop-shadow(0 0 32px rgba(255,112,38,.55));z-index:3;opacity:.82}.fire:before{content:"";position:absolute;left:50%;bottom:20px;width:82px;height:116px;transform:translateX(-50%);border-radius:48%;background:radial-gradient(circle at 50% 70%,#fff1a3 0 8%,#ffc35b 18%,#ff6f31 48%,transparent 70%);animation:flame 1.4s ease-in-out infinite}.fire:after{content:"";position:absolute;left:16px;right:16px;bottom:8px;height:20px;background:linear-gradient(90deg,#7a3e23,#c47a3f,#7a3e23);border-radius:20px}@keyframes flame{50%{transform:translateX(-50%) scale(.9,1.08) rotate(2deg)}}
-.sea{position:absolute;left:0;right:0;bottom:0;height:35%;z-index:1;background:linear-gradient(180deg,rgba(12,33,58,.15),rgba(8,13,22,.84))}
-.mapLayer{position:absolute;left:7%;right:7%;top:29%;height:50%;z-index:4}.mapLayer::before{content:"";position:absolute;inset:8% 6% 4%;border-radius:50%;background:radial-gradient(circle at 62% 44%,rgba(255,217,138,.22),transparent 18%),radial-gradient(circle at 46% 62%,rgba(255,126,172,.12),transparent 22%);filter:blur(2px);pointer-events:none}.mapShape{position:absolute;inset:0;opacity:.82;filter:drop-shadow(0 0 32px rgba(255,217,138,.28)) drop-shadow(0 0 80px rgba(255,126,172,.08))}.mapShape svg{width:100%;height:100%}
-.city{position:absolute;transform:translate(-50%,-50%);border-radius:999px;padding:8px 12px;color:#fff2d2;background:rgba(15,14,25,.72);border:1px solid rgba(255,217,138,.42);backdrop-filter:blur(10px);box-shadow:0 0 14px rgba(255,217,138,.25),0 0 34px rgba(255,217,138,.12);font-size:14px;cursor:pointer;white-space:nowrap;transition:.22s}.city:before{content:"✦";color:var(--gold);margin-right:6px;text-shadow:0 0 12px var(--gold),0 0 22px rgba(255,217,138,.65)}.city:hover,.city.active{background:linear-gradient(90deg,rgba(255,126,172,.9),rgba(255,217,138,.42));box-shadow:0 0 28px rgba(255,126,172,.56),0 0 70px rgba(255,217,138,.26);transform:translate(-50%,-50%) scale(1.08)}.city.done{background:linear-gradient(90deg,rgba(255,217,138,.24),rgba(255,126,172,.22));border-color:rgba(255,217,138,.7);box-shadow:0 0 24px rgba(255,217,138,.45),0 0 70px rgba(255,217,138,.22)}.city.done:before{content:"🌟"}.city small{font-size:12px;color:rgba(255,248,236,.78);margin-left:4px}
-.status{position:absolute;left:24px;bottom:22px;z-index:5;min-width:318px;border:1px solid rgba(255,217,138,.18);border-radius:22px;background:rgba(5,7,16,.70);backdrop-filter:blur(16px);padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 12px 40px rgba(0,0,0,.22)}.status .jar{font-size:34px}.status b{font-size:26px}.status span{display:block;color:var(--muted);font-size:13px;margin-top:3px}
-.panel{position:relative;min-height:calc(100vh - 44px);border:1px solid var(--line);border-radius:34px;background:rgba(8,10,22,.72);backdrop-filter:blur(18px);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.28)}.panelTop{height:148px;background:radial-gradient(circle at 70% 40%,rgba(255,217,138,.22),transparent 30%),linear-gradient(135deg,rgba(255,126,172,.22),rgba(134,236,255,.12));position:relative;border-bottom:1px solid var(--line)}.panelTop:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(8,10,22,.65))}.panelTitle{position:absolute;left:22px;bottom:20px;z-index:2}.panelTitle .small{color:var(--gold);font-size:13px;letter-spacing:.14em;margin-bottom:6px}.panelTitle h2{margin:0;font-size:28px}.panelBody{padding:18px;min-height:calc(100vh - 192px)}
-.empty{height:calc(100vh - 228px);min-height:480px;display:grid;place-items:center;text-align:center;border:1px dashed rgba(255,217,138,.24);border-radius:26px;background:rgba(255,255,255,.04)}.env{width:172px;height:112px;margin:0 auto 24px;position:relative;border-radius:16px;background:linear-gradient(135deg,#f5e7c9,#d6a969);box-shadow:0 18px 60px rgba(0,0,0,.28)}.env:before{content:"";position:absolute;inset:0;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(122,73,30,.2));border-radius:16px}.empty h3{margin:0 0 10px;font-size:28px;color:#ffe6ad}.empty p{margin:0;color:var(--muted);line-height:1.8}
-.mailbox,.letterView{display:none}.mailbox.show,.letterView.show{display:block;animation:fade .24s ease both}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.cityHeader{padding:16px 18px;border-radius:20px;border:1px solid rgba(255,217,138,.18);background:rgba(255,255,255,.055);margin-bottom:14px}.cityHeader b{font-size:22px;color:#ffe6ad}.cityHeader span{display:block;color:var(--muted);margin-top:4px}.mailList{display:grid;gap:10px;max-height:calc(100vh - 312px);overflow:auto;padding-right:4px}.mailItem{border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.06);color:var(--text);padding:14px 15px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left}.mailItem:hover{background:rgba(255,217,138,.12)}.mailIcon{font-size:28px}.mailMeta{flex:1}.mailName{font-weight:800;font-size:17px}.mailHint{color:var(--muted);font-size:13px;margin-top:3px}
-.letterShell{border-radius:24px;background:var(--paper);color:var(--paperText);box-shadow:0 18px 60px rgba(0,0,0,.28);overflow:hidden}.letterView.opening .letterShell{animation:openLetter .48s ease both}@keyframes openLetter{from{opacity:.4;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}.letterHead{padding:18px 22px;background:linear-gradient(135deg,#ffe8bd,#efd1a5);border-bottom:1px solid rgba(90,55,20,.12)}.letterHead .region{color:#7b5633;font-size:14px;margin-bottom:5px}.letterHead .name{font-size:28px;font-weight:900;color:#36210e}.letterContent{position:relative;padding:26px 24px 24px;min-height:310px;max-height:calc(100vh - 440px);overflow:auto}.letterContent:before{content:"“";position:absolute;left:14px;top:-6px;font-size:86px;color:rgba(255,126,172,.25);font-family:Georgia,serif}.wish{position:relative;z-index:2;white-space:pre-line;line-height:1.95;font-size:16px}
-.player{margin-top:14px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(0,0,0,.24);padding:14px;display:flex;align-items:center;gap:13px}.play{min-width:138px;height:52px;border-radius:999px;border:0;background:linear-gradient(135deg,#ff7eac,#ffd98a);color:white;font-size:16px;font-weight:900;cursor:pointer}.bars{flex:1;height:40px;display:flex;align-items:center;gap:4px;overflow:hidden}.bars i{display:block;width:3px;border-radius:4px;background:#ff8fb7;height:12px;opacity:.85;animation:bar 1.2s ease-in-out infinite;animation-play-state:paused}.bars.playing i{animation-play-state:running}@keyframes bar{50%{height:32px}}.controls{display:flex;gap:10px;margin-top:14px}.controls button{flex:1;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:var(--text);border-radius:16px;padding:13px 12px;font-weight:800;cursor:pointer}.controls .primary{background:rgba(255,217,138,.16);border-color:rgba(255,217,138,.28);color:#ffe6a8}.doneBadge{display:none;margin-top:10px;color:#d3ffc6;font-weight:800}.doneBadge.show{display:block}
-.final{display:none;position:absolute;inset:0;z-index:20;background:radial-gradient(circle at center,rgba(255,217,138,.18),transparent 36%),rgba(5,7,16,.94);place-items:center;text-align:center;padding:30px}.final.show{display:grid;animation:fade .5s ease both}.final h2{font-size:clamp(38px,6vw,72px);margin:0 0 12px;color:#ffe8ad}.final p{color:var(--muted);line-height:1.9;font-size:18px;margin:0}.final .fm{margin-top:24px;color:var(--gold);letter-spacing:.24em}
+:root{
+  --bg:#060816;
+  --bg2:#13172c;
+  --text:#fff8ec;
+  --muted:rgba(255,248,236,.72);
+  --gold:#ffd98a;
+  --pink:#ff9acb;
+  --cyan:#8eeaff;
+  --card:rgba(18,22,43,.72);
+  --line:rgba(255,255,255,.16);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+body{
+  background:
+    radial-gradient(circle at 15% 12%,rgba(255,154,203,.22),transparent 30%),
+    radial-gradient(circle at 82% 18%,rgba(142,234,255,.18),transparent 32%),
+    linear-gradient(180deg,#060816 0%,#11172d 54%,#06121f 100%);
+}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.18;animation:twinkle 5s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.12}to{opacity:.28}}
 
-.bgmToggle{
-  position:absolute;
-  right:24px;
-  bottom:22px;
-  z-index:6;
-  border:1px solid rgba(255,217,138,.22);
-  border-radius:999px;
-  background:rgba(5,7,16,.70);
-  color:#ffe8ad;
-  backdrop-filter:blur(16px);
-  padding:12px 15px;
-  font-weight:800;
-  cursor:pointer;
-  box-shadow:0 12px 40px rgba(0,0,0,.22);
+.app{position:relative;z-index:1;min-height:100vh;padding:28px 18px 120px}
+.hero{text-align:center;margin:18px auto 18px;max-width:760px}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--gold);background:rgba(255,255,255,.06);font-size:13px}
+h1{font-size:clamp(30px,7vw,62px);margin:16px 0 8px;letter-spacing:.04em}
+.subtitle{font-size:clamp(15px,3.7vw,20px);color:var(--muted);line-height:1.7;margin:0}
+
+.map-wrap{position:relative;width:min(1100px,100%);height:min(68vh,620px);min-height:430px;margin:26px auto 0;border:1px solid var(--line);border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));box-shadow:0 24px 80px rgba(0,0,0,.36);overflow:hidden}
+.ocean{position:absolute;inset:0;background:
+  radial-gradient(circle at 50% 36%,rgba(142,234,255,.12),transparent 34%),
+  radial-gradient(circle at 25% 70%,rgba(255,217,138,.08),transparent 30%);
 }
-.bgmToggle.on{
-  background:rgba(255,217,138,.16);
-  border-color:rgba(255,217,138,.42);
+.land{position:absolute;inset:9%;opacity:.34;filter:drop-shadow(0 0 26px rgba(142,234,255,.25))}
+.land svg{width:100%;height:100%}
+.land path{fill:rgba(255,248,236,.35)}
+
+.city{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);border:0;background:transparent;color:var(--text);cursor:pointer;padding:0}
+.dot{width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 7px rgba(255,217,138,.13),0 0 28px rgba(255,217,138,.9);animation:pulse 2.2s infinite}
+.city-name{margin-top:9px;font-size:13px;white-space:nowrap;text-shadow:0 2px 10px rgba(0,0,0,.75)}
+.count{color:var(--gold)}
+.city:hover .dot{transform:scale(1.28)}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 7px rgba(255,217,138,.12),0 0 25px rgba(255,217,138,.75)}
+  50%{box-shadow:0 0 0 16px rgba(255,217,138,0),0 0 38px rgba(255,217,138,1)}
 }
+
+.tip{position:absolute;left:22px;bottom:22px;color:var(--muted);font-size:14px}
+.world-btn{position:absolute;right:22px;bottom:22px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.08);color:var(--text);padding:10px 16px;cursor:pointer}
+
+.drawer{position:fixed;left:50%;bottom:18px;transform:translate(-50%,120%);width:min(720px,calc(100% - 28px));max-height:72vh;overflow:auto;background:rgba(15,18,35,.88);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.55);z-index:10;padding:22px;transition:.38s ease}
+.drawer.show{transform:translate(-50%,0)}
+.drawer-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.drawer h2{margin:0;font-size:24px}
+.drawer p{margin:6px 0 0;color:var(--muted);line-height:1.6}
+.close{border:0;background:rgba(255,255,255,.08);color:var(--text);border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer}
+.fan-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px}
+.fan{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.06);padding:14px;text-align:left;color:var(--text);cursor:pointer}
+.fan:hover{border-color:rgba(255,217,138,.55);background:rgba(255,217,138,.08)}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,217,138,.34),rgba(255,154,203,.22));margin-bottom:9px}
+.letter{display:none;margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+.letter.show{display:block}
+.letter h3{margin:0 0 8px}
+.message{font-size:16px;line-height:1.9;color:#fff8ec}
+.audio-btn{margin-top:12px;border:1px solid rgba(255,217,138,.5);background:rgba(255,217,138,.1);color:var(--gold);border-radius:999px;padding:10px 14px;cursor:pointer}
+.back{margin-top:10px;border:0;background:transparent;color:var(--cyan);cursor:pointer}
+
 @media(max-width:640px){
-  .bgmToggle{right:12px;bottom:92px;padding:10px 12px;font-size:13px}
+  .app{padding:20px 12px 110px}
+  .map-wrap{height:62vh;min-height:460px;border-radius:26px}
+  .city-name{font-size:12px}
+  .tip{left:16px;bottom:18px;font-size:12px}
+  .world-btn{right:16px;bottom:16px;padding:9px 12px}
 }
-
-@media(max-width:1020px){.app{grid-template-columns:1fr;padding:12px}.stage{min-height:700px}.panel{min-height:auto}.panelBody{min-height:auto}.empty{min-height:420px;height:auto}}@media(max-width:640px){.title{font-size:34px}.subtitle{font-size:27px}.desc{font-size:14px}.mapLayer{left:2%;right:2%;top:36%;height:38%}.city{font-size:12px;padding:7px 9px}.status{left:12px;right:12px;bottom:12px;min-width:0}.mailList{max-height:none}.letterContent{max-height:none;min-height:260px}.play{min-width:118px}}
 </style>
 </head>
 <body>
-<div class="app">
-<main class="stage"><div class="string"><span></span><span></span><span></span><span></span><span></span></div><div class="moon"></div><div class="sea"></div><div class="tent"></div><div class="fire"></div><header class="header"><div class="kicker">FM05.18</div><h1 class="title">来自各地的回响</h1><div class="subtitle">给谜屿的生日礼物</div><p class="desc">点击地图上的城市，打开一封来自远方的生日信。</p></header><section class="mapLayer"><div class="mapShape"><svg viewBox="0 0 720 420"><path d="M128,196 C145,110 240,80 318,96 C368,64 444,70 492,118 C570,116 626,164 612,230 C656,274 608,344 528,336 C476,384 370,374 332,330 C262,356 180,322 188,260 C144,250 116,232 128,196 Z" fill="rgba(255,217,138,.12)" stroke="rgba(255,217,138,.78)" stroke-width="2.5"/><path d="M255,160 C320,126 425,132 500,186 M210,240 C304,214 418,224 548,280 M300,300 C356,270 444,270 512,312" fill="none" stroke="rgba(255,217,138,.22)" stroke-width="2" stroke-dasharray="7 10"/></svg></div><div id="cityDots"></div></section><div class="status"><div class="jar">💌</div><div><b id="readCount">0 / 0</b><span>已拆阅生日信｜点亮所有城市</span></div></div><button class="bgmToggle" id="bgmToggle">♪ 开启夜海 BGM</button><div class="final" id="final"><div><h2>谜屿，生日快乐</h2><p>来自各地的祝福，都已经抵达。<br>谢谢你，让天南地北的人，因为歌声而相遇。</p><div class="fm">FM05.18</div></div></div></main>
-<aside class="panel"><div class="panelTop"><div class="panelTitle"><div class="small">ECHO LETTERS</div><h2 id="panelTitle">未拆的生日信</h2></div></div><div class="panelBody"><section class="empty" id="emptyState"><div><div class="env"></div><h3>来自各地的回响</h3><p>点击地图上的城市，<br>打开一封来自远方的生日信。</p></div></section><section class="mailbox" id="mailbox"><div class="cityHeader"><b id="mailboxCity">城市</b><span id="mailboxCount">收到 0 封生日信</span></div><div class="mailList" id="mailList"></div></section><section class="letterView" id="letterView"><div class="letterShell"><div class="letterHead"><div class="region" id="letterRegion">📍 -</div><div class="name" id="letterName">-</div></div><div class="letterContent"><div class="wish" id="letterWish"></div></div></div><div class="player"><button class="play" id="playBtn">▶ 播放祝福</button><div class="bars" id="bars"></div></div><div class="doneBadge" id="doneBadge">📬 这封信已经拆阅</div><div class="controls"><button id="backBtn">← 返回信箱</button><button class="primary" id="replayBtn">重播祝福</button></div></section></div></aside>
-</div>
-<script>
-const cityPositions={"南京":{x:62,y:42},"台湾":{x:76,y:72},"海口":{x:52,y:83},"沈阳":{x:66,y:18},"深圳":{x:56,y:72},"曲靖":{x:41,y:67},"长沙":{x:54,y:58},"齐齐哈尔":{x:60,y:9},"延边":{x:72,y:17},"上海":{x:70,y:46},"张家界":{x:50,y:55},"湖州":{x:66,y:45}};
-let blessings=[],currentCity="",currentItem=null,opened=new Set(JSON.parse(localStorage.getItem("fm0518-opened")||"[]")),audio=null,bgm=null,bgmOn=false;const $=id=>document.getElementById(id);
-async function loadData(){try{const r=await fetch("data/blessings.json?v="+Date.now());if(!r.ok)throw new Error();blessings=await r.json()}catch(e){blessings=[{id:"demo",name:"一位家人",region:"远方",city:"远方",wish:"祝谜屿生日快乐。",audio:"audio/demo.m4a"}]}renderBars();renderCities();updateReadCount()}
-function groupByCity(){const m={};blessings.forEach(x=>{const c=x.city||x.region||"其他";(m[c]||(m[c]=[])).push(x)});return m}
-function renderCities(){const wrap=$("cityDots");wrap.innerHTML="";Object.entries(groupByCity()).forEach(([city,list])=>{const pos=cityPositions[city]||{x:50,y:50};const b=document.createElement("button");b.className="city";b.dataset.city=city;b.style.left=pos.x+"%";b.style.top=pos.y+"%";b.innerHTML=`${city}<small>${list.length}</small>`;b.onclick=()=>openMailbox(city);if(list.every(x=>opened.has(x.id)))b.classList.add("done");wrap.appendChild(b)})}
-function setMode(m){$("emptyState").style.display=m==="empty"?"grid":"none";$("mailbox").classList.toggle("show",m==="mailbox");$("letterView").classList.toggle("show",m==="letter")}
-function openMailbox(city){startBgm();stopAudio();currentCity=city;currentItem=null;setMode("mailbox");$("panelTitle").textContent="来自"+city+"的生日信";const list=groupByCity()[city]||[];$("mailboxCity").textContent="📍 "+city;$("mailboxCount").textContent=`收到 ${list.length} 封生日信，选择一封慢慢打开。`;const box=$("mailList");box.innerHTML="";list.forEach(item=>{const btn=document.createElement("button");btn.className="mailItem";btn.innerHTML=`<div class="mailIcon">${opened.has(item.id)?"📬":"💌"}</div><div class="mailMeta"><div class="mailName">${item.name||"一位家人"}</div><div class="mailHint">${opened.has(item.id)?"已拆阅":"点击拆开这封信"}</div></div>`;btn.onclick=()=>openLetter(item);box.appendChild(btn)});document.querySelectorAll(".city").forEach(el=>el.classList.toggle("active",el.dataset.city===city))}
-function openLetter(item){stopAudio();currentItem=item;setMode("letter");$("panelTitle").textContent="正在拆阅生日信";$("letterRegion").textContent="📍 "+(item.region||item.city||"来自远方");$("letterName").textContent=item.name||"一位家人";$("letterWish").textContent=item.wish||"";$("letterView").classList.remove("opening");void $("letterView").offsetWidth;$("letterView").classList.add("opening");$("doneBadge").classList.toggle("show",opened.has(item.id))}
-function renderBars(){const bars=$("bars");bars.innerHTML="";for(let i=0;i<52;i++){const b=document.createElement("i");b.style.animationDelay=(i*.035)+"s";b.style.height=(10+Math.sin(i*.8)*12+(i%5)*2)+"px";bars.appendChild(b)}}
+<div class="stars"></div>
 
-function initBgm(){
-  if(bgm) return;
-  bgm = new Audio("audio/bgm.mp3");
-  bgm.loop = true;
-  bgm.volume = 0.32;
+<main class="app">
+  <section class="hero">
+    <div class="badge">2026 谜屿生日惊喜企划</div>
+    <h1>来自世界的回响</h1>
+    <p class="subtitle">每一座城市，都有一份想送给你的祝福。<br>点亮地图，慢慢打开家人们寄来的心意。</p>
+  </section>
+
+  <section class="map-wrap" id="map">
+    <div class="ocean"></div>
+
+    <div class="land">
+      <svg viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet">
+        <path d="M140 190 C210 100,350 120,400 190 C455 270,360 350,245 330 C145 315,85 260,140 190Z"/>
+        <path d="M430 150 C520 70,690 90,770 175 C850 260,790 390,635 405 C490 420,375 270,430 150Z"/>
+        <path d="M625 315 C705 285,815 315,860 380 C805 440,690 450,615 405 C570 375,575 335,625 315Z"/>
+      </svg>
+    </div>
+
+    <div id="cities"></div>
+    <div class="tip">✨ 点击城市，开启祝福</div>
+    <button class="world-btn" id="tourBtn">🌍 世界回响</button>
+  </section>
+</main>
+
+<section class="drawer" id="drawer">
+  <div class="drawer-head">
+    <div>
+      <h2 id="drawerTitle">城市</h2>
+      <p id="drawerDesc">这里有家人留下的祝福。</p>
+    </div>
+    <button class="close" id="closeBtn">×</button>
+  </div>
+
+  <div class="fan-list" id="fanList"></div>
+
+  <div class="letter" id="letter">
+    <h3 id="fanName"></h3>
+    <div class="message" id="fanMessage"></div>
+    <button class="audio-btn" id="audioBtn">▶ 播放祝福</button>
+    <br>
+    <button class="back" id="backBtn">← 返回名单</button>
+  </div>
+</section>
+
+<script>
+const data = [
+  {
+    city:"台北", x:"73%", y:"55%",
+    fans:[
+      {name:"布丁", icon:"🐱", message:"谜屿，生日快乐！谢谢你一直认真唱歌，也谢谢你让临海居变成一个可以停下来听歌、聊天、放松的地方。新的一岁，愿你平安健康，继续唱自己喜欢的歌。"},
+      {name:"小鲸鱼", icon:"🐳", message:"祝谜屿生日快乐！希望你每天都能被温柔以待，也希望我们还能一起走过很多很多个生日。"}
+    ]
+  },
+  {
+    city:"上海", x:"68%", y:"48%",
+    fans:[
+      {name:"星星", icon:"✨", message:"生日快乐，谜屿。愿你的歌声被更多人听见，也愿你一直被喜欢你的人坚定陪伴。"},
+      {name:"阿月", icon:"🌙", message:"谢谢你这些年的陪伴。新的一岁，不用急着成为谁眼中很厉害的人，继续做真诚唱歌的谜屿就很好。"}
+    ]
+  },
+  {
+    city:"成都", x:"58%", y:"50%",
+    fans:[
+      {name:"夏天", icon:"🌊", message:"谜屿生日快乐！愿你像夏夜海风一样自由，也愿临海居永远热热闹闹。"}
+    ]
+  },
+  {
+    city:"昆明", x:"56%", y:"59%",
+    fans:[
+      {name:"小布丁", icon:"🎂", message:"从台湾到大理，再到昆明，沿路都想着把祝福带给你。生日快乐，谜屿，愿你新的一岁顺顺利利，继续闪闪发光。"},
+      {name:"云朵", icon:"☁️", message:"祝你生日快乐。愿你唱歌时开心，休息时安心，往后的每一天都有人陪你笑。"}
+    ]
+  },
+  {
+    city:"北京", x:"63%", y:"38%",
+    fans:[
+      {name:"北风", icon:"🎧", message:"生日快乐！谢谢你一直把歌唱给我们听，也希望你一直被音乐温柔拥抱。"}
+    ]
+  }
+];
+
+const citiesEl = document.getElementById("cities");
+const drawer = document.getElementById("drawer");
+const drawerTitle = document.getElementById("drawerTitle");
+const drawerDesc = document.getElementById("drawerDesc");
+const fanList = document.getElementById("fanList");
+const letter = document.getElementById("letter");
+const fanName = document.getElementById("fanName");
+const fanMessage = document.getElementById("fanMessage");
+const closeBtn = document.getElementById("closeBtn");
+const backBtn = document.getElementById("backBtn");
+const audioBtn = document.getElementById("audioBtn");
+const tourBtn = document.getElementById("tourBtn");
+
+let currentCity = null;
+let currentFan = null;
+let speech = null;
+
+function renderCities(){
+  citiesEl.innerHTML = "";
+  data.forEach((item, index)=>{
+    const btn = document.createElement("button");
+    btn.className = "city";
+    btn.style.setProperty("--x", item.x);
+    btn.style.setProperty("--y", item.y);
+    btn.innerHTML = `
+      <div class="dot"></div>
+      <div class="city-name">${item.city} <span class="count">(${item.fans.length})</span></div>
+    `;
+    btn.onclick = () => openCity(index);
+    citiesEl.appendChild(btn);
+  });
 }
-function startBgm(){
-  initBgm();
-  bgmOn = true;
-  $("bgmToggle").classList.add("on");
-  $("bgmToggle").textContent = "♪ 夜海 BGM 开启";
-  bgm.play().catch(()=>{});
+
+function openCity(index){
+  stopVoice();
+  currentCity = data[index];
+  currentFan = null;
+  drawerTitle.textContent = "📍 " + currentCity.city;
+  drawerDesc.textContent = `共有 ${currentCity.fans.length} 位家人留下祝福`;
+  letter.classList.remove("show");
+  fanList.style.display = "grid";
+  fanList.innerHTML = "";
+
+  currentCity.fans.forEach((fan, i)=>{
+    const btn = document.createElement("button");
+    btn.className = "fan";
+    btn.innerHTML = `
+      <div class="avatar">${fan.icon || "💌"}</div>
+      <strong>${fan.name}</strong>
+      <p>点击打开祝福</p>
+    `;
+    btn.onclick = () => openFan(i);
+    fanList.appendChild(btn);
+  });
+
+  drawer.classList.add("show");
 }
-function toggleBgm(){
-  initBgm();
-  if(bgmOn){
-    bgm.pause();
-    bgmOn = false;
-    $("bgmToggle").classList.remove("on");
-    $("bgmToggle").textContent = "♪ 开启夜海 BGM";
-  }else{
-    startBgm();
+
+function openFan(index){
+  stopVoice();
+  currentFan = currentCity.fans[index];
+  fanList.style.display = "none";
+  fanName.textContent = currentFan.icon + " " + currentFan.name;
+  fanMessage.textContent = currentFan.message;
+  letter.classList.add("show");
+}
+
+function stopVoice(){
+  if(window.speechSynthesis) window.speechSynthesis.cancel();
+}
+
+function playVoice(){
+  if(!currentFan) return;
+  stopVoice();
+  speech = new SpeechSynthesisUtterance(currentFan.message);
+  speech.lang = "zh-CN";
+  speech.rate = 0.9;
+  speech.pitch = 1.02;
+  window.speechSynthesis.speak(speech);
+}
+
+function closeDrawer(){
+  stopVoice();
+  drawer.classList.remove("show");
+}
+
+function backToList(){
+  stopVoice();
+  letter.classList.remove("show");
+  fanList.style.display = "grid";
+}
+
+async function startTour(){
+  for(let i=0;i<data.length;i++){
+    openCity(i);
+    await wait(1500);
   }
 }
-function duckBgm(){
-  if(bgm && bgmOn) bgm.volume = 0.12;
-}
-function restoreBgm(){
-  if(bgm && bgmOn) bgm.volume = 0.32;
-}
+function wait(ms){return new Promise(resolve=>setTimeout(resolve,ms));}
 
-function stopAudio(){if(audio){audio.pause();audio.currentTime=0;audio=null}$("bars").classList.remove("playing");$("playBtn").textContent="▶ 播放祝福";restoreBgm()}
-function markOpened(item){opened.add(item.id);localStorage.setItem("fm0518-opened",JSON.stringify([...opened]));$("doneBadge").classList.add("show");updateReadCount();renderCities();if(blessings.length&&blessings.every(x=>opened.has(x.id))){$("final").classList.add("show");setTimeout(()=>$("final").classList.remove("show"),6500)}}
-function updateReadCount(){$("readCount").textContent=`${opened.size} / ${blessings.length}`}
-function playCurrent(){if(!currentItem)return;stopAudio();if(!currentItem.audio){alert("这封祝福还没有音频。");return}duckBgm();audio=new Audio(currentItem.audio);$("bars").classList.add("playing");$("playBtn").textContent="Ⅱ 暂停";audio.onended=()=>{markOpened(currentItem);stopAudio()};audio.onerror=()=>{alert("找不到音频："+currentItem.audio);stopAudio()};audio.play().catch(()=>{alert("音频无法播放，请检查文件格式或浏览器权限。");stopAudio()})}
-$("playBtn").onclick=()=>{if(audio)stopAudio();else playCurrent()};$("replayBtn").onclick=playCurrent;$("backBtn").onclick=()=>{stopAudio();if(currentCity)openMailbox(currentCity);else setMode("empty")};$("bgmToggle").onclick=toggleBgm;loadData();
+closeBtn.onclick = closeDrawer;
+backBtn.onclick = backToList;
+audioBtn.onclick = playVoice;
+tourBtn.onclick = startTour;
+
+renderCities();
 </script>
 </body>
 </html>
