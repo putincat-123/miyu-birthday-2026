@@ -3,87 +3,46 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>给谜屿的生日礼物｜来自世界的回响</title>
+<title>谜屿生日礼物｜来自世界的回响</title>
 <style>
 :root{
-  --bg:#060816;
-  --bg2:#13172c;
-  --text:#fff8ec;
-  --muted:rgba(255,248,236,.72);
-  --gold:#ffd98a;
-  --pink:#ff9acb;
-  --cyan:#8eeaff;
-  --card:rgba(18,22,43,.72);
-  --line:rgba(255,255,255,.16);
+  --bg:#060817;--text:#fff8ec;--muted:rgba(255,248,236,.7);
+  --gold:#ffd98a;--cyan:#8eeaff;--pink:#ff9acb;--line:rgba(255,255,255,.16);
 }
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
-body{
-  background:
-    radial-gradient(circle at 15% 12%,rgba(255,154,203,.22),transparent 30%),
-    radial-gradient(circle at 82% 18%,rgba(142,234,255,.18),transparent 32%),
-    linear-gradient(180deg,#060816 0%,#11172d 54%,#06121f 100%);
-}
-.stars{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.18;animation:twinkle 5s ease-in-out infinite alternate}
-@keyframes twinkle{from{opacity:.12}to{opacity:.28}}
-
-.app{position:relative;z-index:1;min-height:100vh;padding:28px 18px 120px}
-.hero{text-align:center;margin:18px auto 18px;max-width:760px}
+body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,rgba(255,154,203,.22),transparent 28%),radial-gradient(circle at 80% 20%,rgba(142,234,255,.18),transparent 30%),linear-gradient(180deg,#060817,#101a30 60%,#06111e);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.16;pointer-events:none}
+.app{position:relative;z-index:1;min-height:100vh;padding:30px 16px 120px}
+.hero{text-align:center;margin:0 auto 22px;max-width:760px}
 .badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--gold);background:rgba(255,255,255,.06);font-size:13px}
-h1{font-size:clamp(30px,7vw,62px);margin:16px 0 8px;letter-spacing:.04em}
-.subtitle{font-size:clamp(15px,3.7vw,20px);color:var(--muted);line-height:1.7;margin:0}
-
-.map-wrap{position:relative;width:min(1100px,100%);height:min(68vh,620px);min-height:430px;margin:26px auto 0;border:1px solid var(--line);border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));box-shadow:0 24px 80px rgba(0,0,0,.36);overflow:hidden}
-.ocean{position:absolute;inset:0;background:
-  radial-gradient(circle at 50% 36%,rgba(142,234,255,.12),transparent 34%),
-  radial-gradient(circle at 25% 70%,rgba(255,217,138,.08),transparent 30%);
-}
-.land{position:absolute;inset:9%;opacity:.34;filter:drop-shadow(0 0 26px rgba(142,234,255,.25))}
-.land svg{width:100%;height:100%}
-.land path{fill:rgba(255,248,236,.35)}
-
-.city{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);border:0;background:transparent;color:var(--text);cursor:pointer;padding:0}
-.dot{width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 7px rgba(255,217,138,.13),0 0 28px rgba(255,217,138,.9);animation:pulse 2.2s infinite}
-.city-name{margin-top:9px;font-size:13px;white-space:nowrap;text-shadow:0 2px 10px rgba(0,0,0,.75)}
-.count{color:var(--gold)}
-.city:hover .dot{transform:scale(1.28)}
-@keyframes pulse{
-  0%,100%{box-shadow:0 0 0 7px rgba(255,217,138,.12),0 0 25px rgba(255,217,138,.75)}
-  50%{box-shadow:0 0 0 16px rgba(255,217,138,0),0 0 38px rgba(255,217,138,1)}
-}
-
+h1{font-size:clamp(34px,7vw,66px);margin:16px 0 8px;letter-spacing:.04em}
+.subtitle{margin:0;color:var(--muted);font-size:clamp(15px,3.7vw,20px);line-height:1.7}
+.map{position:relative;width:min(1100px,100%);height:min(68vh,620px);min-height:460px;margin:26px auto 0;border:1px solid var(--line);border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));box-shadow:0 26px 80px rgba(0,0,0,.38);overflow:hidden}
+.map:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(142,234,255,.14),transparent 35%),radial-gradient(circle at 40% 78%,rgba(255,217,138,.1),transparent 35%)}
+.land{position:absolute;inset:9%;opacity:.34;filter:drop-shadow(0 0 28px rgba(142,234,255,.25))}
+.land svg{width:100%;height:100%}.land path{fill:rgba(255,248,236,.36)}
+.city{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);border:0;background:transparent;color:var(--text);cursor:pointer;padding:0;text-align:center}
+.dot{width:16px;height:16px;margin:auto;border-radius:50%;background:var(--gold);box-shadow:0 0 0 8px rgba(255,217,138,.13),0 0 30px rgba(255,217,138,.9);animation:pulse 2.2s infinite}
+.city-name{margin-top:9px;font-size:13px;white-space:nowrap;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+.city:hover .dot,.city.active .dot{transform:scale(1.35)}
+@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(255,217,138,0),0 0 42px rgba(255,217,138,1)}}
 .tip{position:absolute;left:22px;bottom:22px;color:var(--muted);font-size:14px}
-.world-btn{position:absolute;right:22px;bottom:22px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.08);color:var(--text);padding:10px 16px;cursor:pointer}
-
-.drawer{position:fixed;left:50%;bottom:18px;transform:translate(-50%,120%);width:min(720px,calc(100% - 28px));max-height:72vh;overflow:auto;background:rgba(15,18,35,.88);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.55);z-index:10;padding:22px;transition:.38s ease}
+.drawer{position:fixed;z-index:10;left:50%;bottom:16px;transform:translate(-50%,120%);width:min(760px,calc(100% - 28px));max-height:76vh;overflow:auto;padding:22px;border:1px solid var(--line);border-radius:28px;background:rgba(13,17,34,.88);backdrop-filter:blur(18px);box-shadow:0 30px 90px rgba(0,0,0,.58);transition:.35s ease}
 .drawer.show{transform:translate(-50%,0)}
-.drawer-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding-bottom:14px}
-.drawer h2{margin:0;font-size:24px}
-.drawer p{margin:6px 0 0;color:var(--muted);line-height:1.6}
-.close{border:0;background:rgba(255,255,255,.08);color:var(--text);border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer}
-.fan-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px}
+.drawer-head{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.drawer h2{margin:0;font-size:24px}.drawer p{margin:6px 0 0;color:var(--muted);line-height:1.6}
+.close{width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.09);color:var(--text);font-size:20px;cursor:pointer}
+.fans{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px}
 .fan{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.06);padding:14px;text-align:left;color:var(--text);cursor:pointer}
 .fan:hover{border-color:rgba(255,217,138,.55);background:rgba(255,217,138,.08)}
-.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,217,138,.34),rgba(255,154,203,.22));margin-bottom:9px}
-.letter{display:none;margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
-.letter.show{display:block}
-.letter h3{margin:0 0 8px}
-.message{font-size:16px;line-height:1.9;color:#fff8ec}
-.audio-btn{margin-top:12px;border:1px solid rgba(255,217,138,.5);background:rgba(255,217,138,.1);color:var(--gold);border-radius:999px;padding:10px 14px;cursor:pointer}
-.back{margin-top:10px;border:0;background:transparent;color:var(--cyan);cursor:pointer}
-
-@media(max-width:640px){
-  .app{padding:20px 12px 110px}
-  .map-wrap{height:62vh;min-height:460px;border-radius:26px}
-  .city-name{font-size:12px}
-  .tip{left:16px;bottom:18px;font-size:12px}
-  .world-btn{right:16px;bottom:16px;padding:9px 12px}
-}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,217,138,.32),rgba(255,154,203,.22));margin-bottom:9px}
+.letter{display:none;margin-top:16px;border-top:1px solid var(--line);padding-top:16px}.letter.show{display:block}
+.message{font-size:16px;line-height:1.9}.back{margin-top:12px;border:0;background:transparent;color:var(--cyan);cursor:pointer}
+@media(max-width:640px){.map{height:64vh;border-radius:26px}.tip{font-size:12px;left:16px}.city-name{font-size:12px}}
 </style>
 </head>
-<body>
-<div class="stars"></div>
 
+<body>
 <main class="app">
   <section class="hero">
     <div class="badge">2026 谜屿生日惊喜企划</div>
@@ -91,9 +50,7 @@ h1{font-size:clamp(30px,7vw,62px);margin:16px 0 8px;letter-spacing:.04em}
     <p class="subtitle">每一座城市，都有一份想送给你的祝福。<br>点亮地图，慢慢打开家人们寄来的心意。</p>
   </section>
 
-  <section class="map-wrap" id="map">
-    <div class="ocean"></div>
-
+  <section class="map">
     <div class="land">
       <svg viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet">
         <path d="M140 190 C210 100,350 120,400 190 C455 270,360 350,245 330 C145 315,85 260,140 190Z"/>
@@ -101,97 +58,62 @@ h1{font-size:clamp(30px,7vw,62px);margin:16px 0 8px;letter-spacing:.04em}
         <path d="M625 315 C705 285,815 315,860 380 C805 440,690 450,615 405 C570 375,575 335,625 315Z"/>
       </svg>
     </div>
-
     <div id="cities"></div>
     <div class="tip">✨ 点击城市，开启祝福</div>
-    <button class="world-btn" id="tourBtn">🌍 世界回响</button>
   </section>
 </main>
 
 <section class="drawer" id="drawer">
   <div class="drawer-head">
     <div>
-      <h2 id="drawerTitle">城市</h2>
-      <p id="drawerDesc">这里有家人留下的祝福。</p>
+      <h2 id="drawerTitle"></h2>
+      <p id="drawerDesc"></p>
     </div>
-    <button class="close" id="closeBtn">×</button>
+    <button class="close" onclick="closeDrawer()">×</button>
   </div>
 
-  <div class="fan-list" id="fanList"></div>
+  <div class="fans" id="fans"></div>
 
   <div class="letter" id="letter">
     <h3 id="fanName"></h3>
     <div class="message" id="fanMessage"></div>
-    <button class="audio-btn" id="audioBtn">▶ 播放祝福</button>
-    <br>
-    <button class="back" id="backBtn">← 返回名单</button>
+    <button class="back" onclick="backToFans()">← 返回名单</button>
   </div>
 </section>
 
 <script>
-const data = [
-  {
-    city:"台北", x:"73%", y:"55%",
-    fans:[
-      {name:"布丁", icon:"🐱", message:"谜屿，生日快乐！谢谢你一直认真唱歌，也谢谢你让临海居变成一个可以停下来听歌、聊天、放松的地方。新的一岁，愿你平安健康，继续唱自己喜欢的歌。"},
-      {name:"小鲸鱼", icon:"🐳", message:"祝谜屿生日快乐！希望你每天都能被温柔以待，也希望我们还能一起走过很多很多个生日。"}
-    ]
-  },
-  {
-    city:"上海", x:"68%", y:"48%",
-    fans:[
-      {name:"星星", icon:"✨", message:"生日快乐，谜屿。愿你的歌声被更多人听见，也愿你一直被喜欢你的人坚定陪伴。"},
-      {name:"阿月", icon:"🌙", message:"谢谢你这些年的陪伴。新的一岁，不用急着成为谁眼中很厉害的人，继续做真诚唱歌的谜屿就很好。"}
-    ]
-  },
-  {
-    city:"成都", x:"58%", y:"50%",
-    fans:[
-      {name:"夏天", icon:"🌊", message:"谜屿生日快乐！愿你像夏夜海风一样自由，也愿临海居永远热热闹闹。"}
-    ]
-  },
-  {
-    city:"昆明", x:"56%", y:"59%",
-    fans:[
-      {name:"小布丁", icon:"🎂", message:"从台湾到大理，再到昆明，沿路都想着把祝福带给你。生日快乐，谜屿，愿你新的一岁顺顺利利，继续闪闪发光。"},
-      {name:"云朵", icon:"☁️", message:"祝你生日快乐。愿你唱歌时开心，休息时安心，往后的每一天都有人陪你笑。"}
-    ]
-  },
-  {
-    city:"北京", x:"63%", y:"38%",
-    fans:[
-      {name:"北风", icon:"🎧", message:"生日快乐！谢谢你一直把歌唱给我们听，也希望你一直被音乐温柔拥抱。"}
-    ]
-  }
-];
+let wishes = [];
+let currentCity = null;
 
 const citiesEl = document.getElementById("cities");
 const drawer = document.getElementById("drawer");
 const drawerTitle = document.getElementById("drawerTitle");
 const drawerDesc = document.getElementById("drawerDesc");
-const fanList = document.getElementById("fanList");
+const fansEl = document.getElementById("fans");
 const letter = document.getElementById("letter");
 const fanName = document.getElementById("fanName");
 const fanMessage = document.getElementById("fanMessage");
-const closeBtn = document.getElementById("closeBtn");
-const backBtn = document.getElementById("backBtn");
-const audioBtn = document.getElementById("audioBtn");
-const tourBtn = document.getElementById("tourBtn");
 
-let currentCity = null;
-let currentFan = null;
-let speech = null;
+fetch("./data/wishes.json")
+  .then(res => res.json())
+  .then(data => {
+    wishes = data.cities || [];
+    renderCities();
+  })
+  .catch(() => {
+    document.querySelector(".tip").textContent = "资料载入失败，请检查 data/wishes.json";
+  });
 
 function renderCities(){
   citiesEl.innerHTML = "";
-  data.forEach((item, index)=>{
+  wishes.forEach((city, index) => {
     const btn = document.createElement("button");
     btn.className = "city";
-    btn.style.setProperty("--x", item.x);
-    btn.style.setProperty("--y", item.y);
+    btn.style.setProperty("--x", city.x);
+    btn.style.setProperty("--y", city.y);
     btn.innerHTML = `
       <div class="dot"></div>
-      <div class="city-name">${item.city} <span class="count">(${item.fans.length})</span></div>
+      <div class="city-name">${city.name}</div>
     `;
     btn.onclick = () => openCity(index);
     citiesEl.appendChild(btn);
@@ -199,16 +121,17 @@ function renderCities(){
 }
 
 function openCity(index){
-  stopVoice();
-  currentCity = data[index];
-  currentFan = null;
-  drawerTitle.textContent = "📍 " + currentCity.city;
-  drawerDesc.textContent = `共有 ${currentCity.fans.length} 位家人留下祝福`;
-  letter.classList.remove("show");
-  fanList.style.display = "grid";
-  fanList.innerHTML = "";
+  currentCity = wishes[index];
+  document.querySelectorAll(".city").forEach(c => c.classList.remove("active"));
+  document.querySelectorAll(".city")[index].classList.add("active");
 
-  currentCity.fans.forEach((fan, i)=>{
+  drawerTitle.textContent = "📍 " + currentCity.name;
+  drawerDesc.textContent = `来自 ${currentCity.name} 的 ${currentCity.fans.length} 份祝福`;
+  fansEl.style.display = "grid";
+  letter.classList.remove("show");
+  fansEl.innerHTML = "";
+
+  currentCity.fans.forEach((fan, i) => {
     const btn = document.createElement("button");
     btn.className = "fan";
     btn.innerHTML = `
@@ -217,60 +140,29 @@ function openCity(index){
       <p>点击打开祝福</p>
     `;
     btn.onclick = () => openFan(i);
-    fanList.appendChild(btn);
+    fansEl.appendChild(btn);
   });
 
   drawer.classList.add("show");
 }
 
 function openFan(index){
-  stopVoice();
-  currentFan = currentCity.fans[index];
-  fanList.style.display = "none";
-  fanName.textContent = currentFan.icon + " " + currentFan.name;
-  fanMessage.textContent = currentFan.message;
+  const fan = currentCity.fans[index];
+  fansEl.style.display = "none";
+  fanName.textContent = `${fan.icon || "💌"} ${fan.name}`;
+  fanMessage.textContent = fan.message;
   letter.classList.add("show");
 }
 
-function stopVoice(){
-  if(window.speechSynthesis) window.speechSynthesis.cancel();
-}
-
-function playVoice(){
-  if(!currentFan) return;
-  stopVoice();
-  speech = new SpeechSynthesisUtterance(currentFan.message);
-  speech.lang = "zh-CN";
-  speech.rate = 0.9;
-  speech.pitch = 1.02;
-  window.speechSynthesis.speak(speech);
+function backToFans(){
+  letter.classList.remove("show");
+  fansEl.style.display = "grid";
 }
 
 function closeDrawer(){
-  stopVoice();
   drawer.classList.remove("show");
+  document.querySelectorAll(".city").forEach(c => c.classList.remove("active"));
 }
-
-function backToList(){
-  stopVoice();
-  letter.classList.remove("show");
-  fanList.style.display = "grid";
-}
-
-async function startTour(){
-  for(let i=0;i<data.length;i++){
-    openCity(i);
-    await wait(1500);
-  }
-}
-function wait(ms){return new Promise(resolve=>setTimeout(resolve,ms));}
-
-closeBtn.onclick = closeDrawer;
-backBtn.onclick = backToList;
-audioBtn.onclick = playVoice;
-tourBtn.onclick = startTour;
-
-renderCities();
 </script>
 </body>
 </html>
