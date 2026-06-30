@@ -114,6 +114,17 @@ h1{font-size:clamp(34px,7vw,66px);margin:16px 0 8px;letter-spacing:.04em}
   .city small{font-size:10px}
   .drawer{padding:18px}
 }
+  .audioBox{display:none;margin-top:16px}
+.audioBtn{
+  border:1px solid rgba(255,217,138,.45);
+  border-radius:999px;
+  background:rgba(255,217,138,.1);
+  color:var(--gold);
+  padding:10px 16px;
+  cursor:pointer;
+  font-size:14px;
+}
+.audioBtn:hover{background:rgba(255,217,138,.18)}
 </style>
 </head>
 
@@ -147,7 +158,13 @@ h1{font-size:clamp(34px,7vw,66px);margin:16px 0 8px;letter-spacing:.04em}
   <div class="letter" id="letter">
     <h3 id="fanName"></h3>
     <div class="message" id="fanMessage"></div>
-    <button class="back" onclick="backToFans()">← 返回名单</button>
+
+    <div class="audioBox" id="audioBox">
+      <button class="audioBtn" id="audioBtn" onclick="toggleWishAudio()">🎙️ 播放这份祝福</button>
+      <audio id="wishAudio" preload="none"></audio>
+    </div>
+
+<button class="back" onclick="backToFans()">← 返回名单</button>
   </div>
 
   <div class="ending" id="ending">
@@ -283,8 +300,22 @@ function openFan(i){
   const fan=currentCity.fans[i];
   fansEl.style.display="none";
   fanName.textContent=`${fan.icon||"💌"} ${fan.name}`;
-  fanMessage.textContent=fan.message;
+  fanMessage.textContent=fan.message || "这是一份语音祝福，点下面按钮收听。";
   letter.classList.add("show");
+
+  const audioBox = $("audioBox");
+  const audioBtn = $("audioBtn");
+  const wishAudio = $("wishAudio");
+
+  if(fan.audio){
+    audioBox.style.display = "block";
+    wishAudio.src = fan.audio;
+    audioBtn.textContent = "🎙️ 播放这份祝福";
+  }else{
+    audioBox.style.display = "none";
+    wishAudio.pause();
+    wishAudio.removeAttribute("src");
+  }
 }
 
 function backToFans(){
@@ -295,6 +326,24 @@ function backToFans(){
 function closeDrawer(){
   drawer.classList.remove("show");
   document.querySelectorAll(".city").forEach(c=>c.classList.remove("active"));
+}
+  function toggleWishAudio(){
+  const audio = $("wishAudio");
+  const btn = $("audioBtn");
+
+  if(!audio.src) return;
+
+  if(audio.paused){
+    audio.play();
+    btn.textContent = "⏸️ 暂停播放";
+  }else{
+    audio.pause();
+    btn.textContent = "🎙️ 播放这份祝福";
+  }
+
+  audio.onended = () => {
+    btn.textContent = "🔁 再听一次";
+  };
 }
 </script>
 </body>
