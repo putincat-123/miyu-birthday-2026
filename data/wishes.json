@@ -3,11 +3,9 @@
     {
       "name": "南京",
       "province": "江苏",
-      "x": "66%",
-      "y": "47%",
       "fans": [
         {
-          "id": "guiciciya",
+          "id": "wish-01",
           "name": "归辞辞呀",
           "icon": "💌",
           "location": "江苏/南京",
@@ -20,11 +18,9 @@
     {
       "name": "台南",
       "province": "台湾",
-      "x": "73%",
-      "y": "60%",
       "fans": [
         {
-          "id": "xiaosu",
+          "id": "wish-02",
           "name": "曉酥",
           "icon": "🎂",
           "location": "台湾台南",
@@ -37,28 +33,24 @@
     {
       "name": "海口",
       "province": "海南",
-      "x": "61%",
-      "y": "67%",
       "fans": [
         {
-          "id": "guangza",
+          "id": "wish-03",
           "name": "光砸",
           "icon": "🌺",
           "location": "海南/海口",
           "message": "祝大哥年年岁岁平安喜乐，岁岁年年风采依旧，永远青春，永远热泪盈眶，永远少年！一路繁花，直播长红！（如果还是攒不住财，可以放我这，我帮您存着，哈哈哈哈。）",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-03.mp3"
         }
       ]
     },
     {
       "name": "沈阳",
       "province": "辽宁",
-      "x": "70%",
-      "y": "32%",
       "fans": [
         {
-          "id": "meme",
+          "id": "wish-04",
           "name": "么么",
           "icon": "🤍",
           "location": "辽宁/沈阳",
@@ -71,11 +63,9 @@
     {
       "name": "台湾",
       "province": "台湾",
-      "x": "74%",
-      "y": "57%",
       "fans": [
         {
-          "id": "chuxindexiangyang",
+          "id": "wish-05",
           "name": "初心的向陽",
           "icon": "🌻",
           "location": "台湾",
@@ -84,41 +74,37 @@
           "audio": ""
         },
         {
-          "id": "qingqin",
+          "id": "wish-15",
           "name": "晴琴",
           "icon": "🎵",
           "location": "台湾",
           "message": "谜屿~爷爷呀~生日快乐~祝你每天都健康平安~喜乐常在~抽抽都白到发光呀~谢谢你每天的陪伴~从刚进猫耳就遇见你到现在~真的是非常的幸运呀~很开心能够来到你的直播间和大家相遇~一听到你唱歌心情都变好了~待着真的很放松~很喜欢待在这里~就是这样！ 爷爷生日快乐呀~天天开心！！！",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-15.m4a"
         }
       ]
     },
     {
       "name": "深圳",
       "province": "广东",
-      "x": "64%",
-      "y": "63%",
       "fans": [
         {
-          "id": "miemiemiezhe",
-          "name": "咩咩咩啫",
-          "icon": "🐑",
+          "id": "wish-06",
+          "name": "小韦",
+          "icon": "🎙️",
           "location": "广东/深圳",
-          "message": "一路走来不容易，不管现在是顺还是有点累，都希望你记住一点：能扛事的人，运气都不会太差。接下来的日子，愿你少点焦虑，多点确定；少点内耗，多点结果。敬你这一岁，依旧有热血，生日快乐！",
+          "message": "",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-06.m4a"
         }
       ]
     },
     {
       "name": "曲靖",
       "province": "云南",
-      "x": "53%",
-      "y": "61%",
       "fans": [
         {
-          "id": "xiaobao",
+          "id": "wish-07",
           "name": "小宝",
           "icon": "🎈",
           "location": "云南/曲靖",
@@ -131,11 +117,9 @@
     {
       "name": "长沙",
       "province": "湖南",
-      "x": "60%",
-      "y": "56%",
       "fans": [
         {
-          "id": "wuhuayeye",
+          "id": "wish-08",
           "name": "谜屿是无花爷爷",
           "icon": "🌙",
           "location": "湖南/长沙",
@@ -148,11 +132,9 @@
     {
       "name": "齐齐哈尔",
       "province": "黑龙江",
-      "x": "69%",
-      "y": "23%",
       "fans": [
         {
-          "id": "weixiao",
+          "id": "wish-09",
           "name": "微笑",
           "icon": "😊",
           "location": "黑龙江/齐齐哈尔",
@@ -165,11 +147,9 @@
     {
       "name": "台北",
       "province": "台湾",
-      "x": "74%",
-      "y": "55%",
       "fans": [
         {
-          "id": "buding",
+          "id": "wish-10",
           "name": "布丁",
           "icon": "🐱",
           "location": "台湾/台北",
@@ -182,11 +162,9 @@
     {
       "name": "延边",
       "province": "吉林",
-      "x": "75%",
-      "y": "29%",
       "fans": [
         {
-          "id": "xuanzi",
+          "id": "wish-11",
           "name": "玄子",
           "icon": "🫶",
           "location": "吉林/延边",
@@ -199,11 +177,9 @@
     {
       "name": "上海",
       "province": "上海",
-      "x": "69%",
-      "y": "50%",
       "fans": [
         {
-          "id": "dingdang",
+          "id": "wish-12",
           "name": "叮当",
           "icon": "✨",
           "location": "上海",
@@ -216,28 +192,24 @@
     {
       "name": "张家界",
       "province": "湖南",
-      "x": "58%",
-      "y": "55%",
       "fans": [
         {
-          "id": "eleven_kafei",
+          "id": "wish-13",
           "name": "Eleven_咖啡",
           "icon": "☕",
           "location": "湖南/张家界",
           "message": "生日快乐，今年因为忙现生很少来和大家一起玩，等我空了一定回来，等我嗷！！！！我很期待见到业主群庞大的样子✌🏻",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-13.m4a"
         }
       ]
     },
     {
       "name": "湖州",
       "province": "浙江",
-      "x": "68%",
-      "y": "51%",
       "fans": [
         {
-          "id": "heiqundubai",
+          "id": "wish-14",
           "name": "黑裙独白",
           "icon": "🖤",
           "location": "浙江/湖州",
