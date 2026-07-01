@@ -570,7 +570,21 @@ bgmBtn=$("bgmBtn"),
 bgmHint=$("bgmHint");
 
 bgmAudio.volume=bgmNormalVolume;
+window.addEventListener("load",()=>{
+  tryAutoPlayBgm();
+});
 
+document.addEventListener("click",()=>{
+  if(!bgmStarted && bgmAudio && bgmAudio.paused){
+    tryAutoPlayBgm();
+  }
+},{once:true});
+
+document.addEventListener("touchstart",()=>{
+  if(!bgmStarted && bgmAudio && bgmAudio.paused){
+    tryAutoPlayBgm();
+  }
+},{once:true});
 const starLayout = {
   "齐齐哈尔": ["66%","18%"],
   "延边": ["73%","24%"],
