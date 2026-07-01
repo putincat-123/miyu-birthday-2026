@@ -61,14 +61,14 @@
       ]
     },
     {
-      "name": "台湾",
+      "name": "台北",
       "province": "台湾",
       "fans": [
         {
           "id": "wish-05",
           "name": "初心的向陽",
           "icon": "🌻",
-          "location": "台湾",
+          "location": "台湾/台北",
           "message": "生日快樂🎂心願達成🎉平安健康~不再花大錢~錢永遠存住留住在自己身上🥳🥳🥳",
           "avatar": "",
           "audio": "audio/wish-05.mp3"
