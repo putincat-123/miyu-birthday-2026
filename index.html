@@ -855,6 +855,23 @@ function toggleBgm(){
   }
 }
 
+function tryAutoPlayBgm(){
+  if(!bgmAudio) return;
+
+  bgmAudio.volume=bgmNormalVolume;
+
+  bgmAudio.play()
+    .then(()=>{
+      bgmStarted=true;
+      bgmBtn.textContent="🎵 背景音乐播放中";
+      bgmHint.textContent="轻柔循环";
+    })
+    .catch(()=>{
+      bgmBtn.textContent="🎵 点一下开启背景音乐";
+      bgmHint.textContent="浏览器需要点击";
+    });
+}
+  
 function duckBgm(){
   if(bgmStarted && !bgmAudio.paused){
     bgmAudio.volume=bgmDuckVolume;
