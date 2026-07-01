@@ -11,7 +11,7 @@
           "location": "江苏/南京",
           "message": "主包生日快乐~要每天开开心心健健康康的呀(=^▽^=)",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-01.m4a"
         }
       ]
     },
@@ -26,7 +26,7 @@
           "location": "台湾台南",
           "message": "大哥祝你生日快樂，健康平安",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-02.m4a"
         }
       ]
     },
@@ -56,7 +56,7 @@
           "location": "辽宁/沈阳",
           "message": "此时无声胜有声，省略十万句",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-04.m4a"
         }
       ]
     },
@@ -71,7 +71,7 @@
           "location": "台湾",
           "message": "生日快樂🎂心願達成🎉平安健康~不再花大錢~錢永遠存住留住在自己身上🥳🥳🥳",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-05.mp3"
         },
         {
           "id": "wish-15",
@@ -110,7 +110,7 @@
           "location": "云南/曲靖",
           "message": "生日快乐呀！（由于学校不放假，所以没办法回来，小小原谅一下下我吧）",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-07.mp3"
         }
       ]
     },
@@ -125,7 +125,7 @@
           "location": "湖南/长沙",
           "message": "认识时间不算长但也不短了，在你这里我是放松的随意的，今天你生日，愿你平安喜乐，收获更多人偏爱和喜欢，所愿皆所得。生日快乐\"爷爷\"",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-08.mp3"
         }
       ]
     },
@@ -140,7 +140,7 @@
           "location": "黑龙江/齐齐哈尔",
           "message": "生日快乐，身体健康，祝大哥开心顺意，越来越帅气，唱歌越来越好听，小耳朵越来越多，哈哈哈哈哈",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-09.mp3"
         }
       ]
     },
@@ -155,7 +155,7 @@
           "location": "台湾/台北",
           "message": "亲爱的大哥，生日快乐呀🎂希望新的一岁，你要好好照顾自己。愿你拥有健康的身体、稳定的快乐、热爱的事业，以及始终愿意陪伴你的人。愿你被世界温柔以待，也愿你永远保有最初热爱唱歌的那颗心。🩵",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-10.mp3"
         }
       ]
     },
@@ -170,7 +170,7 @@
           "location": "吉林/延边",
           "message": "哑了就不给你语音祝福了，祝我的命运共同体生日快乐！永远不死（不是）！",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-11.mp3"
         }
       ]
     },
@@ -185,7 +185,7 @@
           "location": "上海",
           "message": "顺遂无虞，皆得所愿",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-12.mp3"
         }
       ]
     },
@@ -215,7 +215,7 @@
           "location": "浙江/湖州",
           "message": "祝福谜屿生日快乐🎉，牙好身体好",
           "avatar": "",
-          "audio": ""
+          "audio": "audio/wish-14.mp3"
         }
       ]
     }
