@@ -1,816 +1,223 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>谜屿专属の夏夜生日星空祝福</title>
-<style>
-:root{
-  --bg:#060817;
-  --bg2:#101a30;
-  --text:#fff8ec;
-  --muted:rgba(255,248,236,.72);
-  --gold:#ffd98a;
-  --gold2:#ffe9b8;
-  --cyan:#8eeaff;
-  --pink:#ff9acb;
-  --line:rgba(255,255,255,.16);
-  --glass:rgba(13,17,34,.76);
-}
-*{box-sizing:border-box}
-html,body{
-  margin:0;
-  min-height:100%;
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-  color:var(--text);
-  background:#060817;
-  overflow-x:hidden;
-}
-body{
-  background:
-    radial-gradient(circle at 18% 10%,rgba(255,154,203,.24),transparent 30%),
-    radial-gradient(circle at 84% 18%,rgba(142,234,255,.18),transparent 32%),
-    radial-gradient(circle at 50% 82%,rgba(255,217,138,.10),transparent 26%),
-    linear-gradient(180deg,#060817,#101a30 58%,#06111e);
-}
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:
-    radial-gradient(#fff 1px,transparent 1px),
-    radial-gradient(rgba(255,217,138,.58) 1px,transparent 1px);
-  background-size:42px 42px,93px 93px;
-  background-position:0 0,18px 24px;
-  opacity:.15;
-  pointer-events:none;
-}
-body:after{
-  content:"";
-  position:fixed;
-  inset:auto -12% -20% -12%;
-  height:46vh;
-  background:radial-gradient(ellipse at center,rgba(142,234,255,.12),transparent 68%);
-  pointer-events:none;
-}
-button,input,textarea{font:inherit}
-button{-webkit-tap-highlight-color:transparent}
-.app{
-  position:relative;
-  z-index:1;
-  min-height:100vh;
-  padding:30px 16px 122px;
-}
-.hero{
-  position:relative;
-  text-align:center;
-  margin:0 auto 22px;
-  max-width:780px;
-}
-.badge{
-  display:inline-block;
-  border:1px solid rgba(255,217,138,.28);
-  border-radius:999px;
-  padding:7px 14px;
-  color:var(--gold);
-  background:rgba(255,255,255,.06);
-  box-shadow:0 0 26px rgba(255,217,138,.08) inset;
-  font-size:13px;
-  letter-spacing:.06em;
-}
-h1{
-  font-size:clamp(34px,7vw,66px);
-  margin:16px 0 8px;
-  letter-spacing:.04em;
-  line-height:1.05;
-  text-shadow:0 8px 34px rgba(255,217,138,.20);
-}
-.subtitle{
-  margin:0;
-  color:var(--muted);
-  font-size:clamp(15px,3.7vw,20px);
-  line-height:1.72;
-}
-.stats{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  margin-top:15px;
-  padding:8px 14px;
-  color:var(--gold);
-  border:1px solid rgba(255,217,138,.20);
-  border-radius:999px;
-  background:rgba(6,8,23,.30);
-  font-size:14px;
-}
-.map{
-  position:relative;
-  width:min(1120px,100%);
-  height:min(68vh,630px);
-  min-height:470px;
-  margin:24px auto 0;
-  border:1px solid var(--line);
-  border-radius:34px;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.035)),
-    radial-gradient(circle at 52% 49%,rgba(255,217,138,.10),transparent 30%);
-  box-shadow:
-    0 26px 80px rgba(0,0,0,.38),
-    inset 0 0 0 1px rgba(255,255,255,.04);
-  overflow:hidden;
-}
-.map:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 28% 34%,rgba(255,154,203,.10),transparent 18%),
-    radial-gradient(circle at 56% 48%,rgba(255,217,138,.13),transparent 23%),
-    radial-gradient(circle at 42% 62%,rgba(142,234,255,.11),transparent 28%),
-    linear-gradient(135deg,transparent 0 33%,rgba(255,255,255,.045) 34%,transparent 36% 100%);
-  pointer-events:none;
-}
-.map:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:
-    radial-gradient(rgba(255,255,255,.45) 1px,transparent 1px),
-    radial-gradient(rgba(255,217,138,.30) 1px,transparent 1px);
-  background-size:80px 80px,130px 130px;
-  opacity:.24;
-  pointer-events:none;
-}
-.moon{
-  position:absolute;
-  z-index:1;
-  right:clamp(22px,5vw,58px);
-  top:clamp(20px,4vw,42px);
-  width:76px;
-  height:76px;
-  border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#fff9df 0 28%,#ffe8a3 55%,rgba(255,217,138,.48) 70%,transparent 72%);
-  filter:drop-shadow(0 0 24px rgba(255,217,138,.38));
-  opacity:.74;
-}
-.moon:after{
-  content:"";
-  position:absolute;
-  left:13px;
-  top:6px;
-  width:76px;
-  height:76px;
-  border-radius:50%;
-  background:rgba(7,10,27,.78);
-}
-.constellation{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  opacity:.32;
-}
-.constellation line{
-  stroke:rgba(255,217,138,.46);
-  stroke-width:1;
-}
-#cities{
-  position:absolute;
-  inset:0;
-  z-index:2;
-}
-.city{
-  position:absolute;
-  left:var(--x);
-  top:var(--y);
-  transform:translate(-50%,-50%);
-  border:0;
-  background:transparent;
-  color:var(--text);
-  cursor:pointer;
-  padding:12px;
-  text-align:center;
-  opacity:.86;
-  transition:opacity .2s ease, transform .2s ease;
-}
-.city:nth-child(3n){opacity:1}
-.city:nth-child(4n){opacity:.72}
-.dot{
-  width:18px;
-  height:18px;
-  margin:auto;
-  border-radius:50%;
-  background:radial-gradient(circle,#fffef8 0%,#ffe8a3 35%,#ffd98a 70%,#ffc85d 100%);
-  box-shadow:
-    0 0 0 8px rgba(255,217,138,.13),
-    0 0 34px rgba(255,217,138,.95);
-  animation:twinkle 2.6s ease-in-out infinite;
-  transition:transform .22s ease, box-shadow .22s ease;
-}
-.city:nth-child(2n) .dot{width:14px;height:14px}
-.city:nth-child(5n) .dot{width:22px;height:22px}
-.city-name{
-  margin-top:9px;
-  font-size:12px;
-  font-weight:500;
-  letter-spacing:.05em;
-  white-space:nowrap;
-  text-shadow:0 2px 10px rgba(0,0,0,.85);
-}
-.city small{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  margin-top:2px;
-  opacity:0;
-  transform:translateY(-2px);
-  transition:.18s ease;
-}
-.city:hover small,.city.active small{opacity:1;transform:translateY(0)}
-.city:hover,.city.active{opacity:1;transform:translate(-50%,-50%) scale(1.04)}
-.city:hover .dot,.city.active .dot{transform:scale(1.28)}
-.city.collected .dot{
-  background:radial-gradient(circle,#fffef8,#ffe8a3,#ffd98a);
-  box-shadow:
-    0 0 12px rgba(255,255,255,.82),
-    0 0 28px rgba(142,234,255,.62),
-    0 0 48px rgba(255,217,138,.52);
-}
-.city.collected .city-name:before{content:"⭐ "}
-@keyframes twinkle{
-  0%{opacity:.58;transform:scale(.96)}
-  50%{opacity:1;transform:scale(1.1)}
-  100%{opacity:.72;transform:scale(.98)}
-}
-.tip,.progress{
-  position:absolute;
-  z-index:3;
-  bottom:22px;
-  display:inline-flex;
-  align-items:center;
-  min-height:32px;
-  padding:7px 12px;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:999px;
-  background:rgba(6,8,23,.30);
-  backdrop-filter:blur(10px);
-  font-size:14px;
-}
-.tip{
-  left:22px;
-  color:var(--muted);
-}
-.progress{
-  right:22px;
-  color:var(--gold);
-}
-.drawer{
-  position:fixed;
-  z-index:10;
-  left:50%;
-  bottom:16px;
-  transform:translate(-50%,120%);
-  width:min(780px,calc(100% - 28px));
-  max-height:76vh;
-  overflow:auto;
-  padding:22px;
-  border:1px solid var(--line);
-  border-radius:28px;
-  background:rgba(13,17,34,.92);
-  backdrop-filter:blur(18px);
-  box-shadow:0 30px 90px rgba(0,0,0,.58);
-  transition:transform .35s ease;
-  overscroll-behavior:contain;
-}
-.drawer.show{transform:translate(-50%,0)}
-.drawer-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:14px;
-  border-bottom:1px solid var(--line);
-  padding-bottom:14px;
-}
-.drawer h2{
-  margin:0;
-  font-size:24px;
-  line-height:1.25;
-}
-.drawer h3{
-  margin:0 0 10px;
-  color:var(--gold2);
-  font-size:20px;
-}
-.drawer p{
-  margin:6px 0 0;
-  color:var(--muted);
-  line-height:1.6;
-}
-.close{
-  flex:0 0 auto;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(255,255,255,.09);
-  color:var(--text);
-  font-size:22px;
-  line-height:1;
-  cursor:pointer;
-}
-.close:hover{background:rgba(255,255,255,.14)}
-.fans{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
-  gap:12px;
-  margin-top:16px;
-}
-.fan{
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(255,255,255,.06);
-  padding:14px;
-  text-align:left;
-  color:var(--text);
-  cursor:pointer;
-  transition:.2s ease;
-}
-.fan:hover{
-  border-color:rgba(255,217,138,.55);
-  background:rgba(255,217,138,.08);
-  transform:translateY(-1px);
-}
-.avatar{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,rgba(255,217,138,.32),rgba(255,154,203,.22));
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.10);
-  margin-bottom:9px;
-}
-.letter{
-  display:none;
-  margin-top:16px;
-  border-top:1px solid var(--line);
-  padding-top:16px;
-}
-.letter.show{display:block}
-.message{
-  font-size:16px;
-  line-height:1.95;
-  white-space:pre-wrap;
-}
-.audioBox{
-  display:none;
-  margin-top:18px;
-  padding:14px;
-  border:1px solid rgba(255,217,138,.20);
-  border-radius:18px;
-  background:rgba(255,217,138,.06);
-}
-.audioBtn{
-  width:100%;
-  border:1px solid rgba(255,217,138,.45);
-  border-radius:999px;
-  background:rgba(255,217,138,.10);
-  color:var(--gold);
-  padding:11px 16px;
-  cursor:pointer;
-  font-size:14px;
-}
-.audioBtn:hover{background:rgba(255,217,138,.18)}
-.back{
-  margin-top:16px;
-  border:0;
-  background:transparent;
-  color:var(--cyan);
-  cursor:pointer;
-  padding:0;
-}
-.ending{
-  display:none;
-  text-align:center;
-  padding:18px;
-  border-top:1px solid var(--line);
-  margin-top:14px;
-  color:var(--gold);
-  line-height:1.8;
-}
-.ending.show{display:block}
-@media(max-width:760px){
-  .tip,.progress{
-    bottom:16px;
-    font-size:12px;
-    padding:7px 10px;
-  }
-  .tip{left:16px;max-width:54%;border-radius:18px}
-  .progress{right:16px}
-}
-@media(max-width:640px){
-  .app{padding:22px 12px 116px}
-  .badge{font-size:12px}
-  .stats{font-size:13px}
-  .map{
-    height:min(62vh,580px);
-    min-height:430px;
-    border-radius:26px;
-  }
-  .moon{
-    width:58px;
-    height:58px;
-    opacity:.62;
-  }
-  .moon:after{
-    width:58px;
-    height:58px;
-    left:10px;
-    top:5px;
-  }
-  .city{padding:10px}
-  .city-name{font-size:12px}
-  .city small{font-size:10px}
-  .drawer{
-    width:calc(100% - 20px);
-    max-height:78vh;
-    padding:18px;
-    border-radius:24px;
-    bottom:10px;
-  }
-  .fans{grid-template-columns:1fr 1fr;gap:10px}
-  .fan{padding:12px}
-}
-@media(max-width:430px){
-  .subtitle br{display:none}
-  .map{min-height:420px}
-  .fans{grid-template-columns:1fr}
-  .tip{display:none}
-}
-</style>
-</head>
-
-<body>
-<main class="app">
-  <section class="hero">
-    <div class="badge">2026 谜屿生日惊喜企划</div>
-    <h1>来自各地的回响</h1>
-    <p class="subtitle">这些来自不同地方的祝福，连成了只属于你的生日星空。<br>点亮每一颗星，慢慢打开家人们寄来的心意。</p>
-    <div class="stats" id="stats">祝福载入中...</div>
-  </section>
-
-  <section class="map" aria-label="生日祝福星空地图">
-    <div class="moon" aria-hidden="true"></div>
-    <svg class="constellation" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-      <line x1="40" y1="61" x2="47" y2="56"></line>
-      <line x1="47" y1="56" x2="53" y2="51"></line>
-      <line x1="53" y1="51" x2="58" y2="45"></line>
-      <line x1="58" y1="45" x2="64" y2="50"></line>
-      <line x1="64" y1="50" x2="72" y2="54"></line>
-      <line x1="51" y1="72" x2="56" y2="65"></line>
-      <line x1="56" y1="65" x2="68" y2="61"></line>
-      <line x1="66" y1="18" x2="73" y2="24"></line>
-      <line x1="73" y1="24" x2="63" y2="33"></line>
-    </svg>
-    <div id="cities"></div>
-    <div class="tip">✨ 点亮一颗星，收下来自远方的生日祝福。</div>
-    <div class="progress" id="progress">已点亮 0 / 0</div>
-  </section>
-</main>
-
-<section class="drawer" id="drawer" aria-live="polite">
-  <div class="drawer-head">
-    <div>
-      <h2 id="drawerTitle"></h2>
-      <p id="drawerDesc"></p>
-    </div>
-    <button class="close" type="button" onclick="closeDrawer()" aria-label="关闭">×</button>
-  </div>
-
-  <div class="fans" id="fans"></div>
-
-  <div class="letter" id="letter">
-    <h3 id="fanName"></h3>
-    <div class="message" id="fanMessage"></div>
-
-    <div class="audioBox" id="audioBox">
-      <button class="audioBtn" id="audioBtn" type="button" onclick="toggleWishAudio()">🎙️ 播放这份祝福</button>
-      <audio id="wishAudio" preload="none"></audio>
-    </div>
-
-    <button class="back" type="button" onclick="backToFans()">← 返回名单</button>
-  </div>
-
-  <div class="ending" id="ending">
-    谢谢每一位家人。<br>
-    因为你们，这个夏夜变得更加温暖。<br>
-    <strong>生日快乐，谜屿。</strong>
-  </div>
-</section>
-
-<script>
-let wishes=[],currentCity=null,collected=new Set();
-
-const $=id=>document.getElementById(id),
-citiesEl=$("cities"),
-drawer=$("drawer"),
-drawerTitle=$("drawerTitle"),
-drawerDesc=$("drawerDesc"),
-fansEl=$("fans"),
-letter=$("letter"),
-fanName=$("fanName"),
-fanMessage=$("fanMessage"),
-stats=$("stats"),
-ending=$("ending"),
-progress=$("progress"),
-audioBox=$("audioBox"),
-audioBtn=$("audioBtn"),
-wishAudio=$("wishAudio");
-
-const starLayout = {
-  "齐齐哈尔": ["66%","18%"],
-  "延边": ["73%","24%"],
-  "沈阳": ["63%","33%"],
-
-  "南京": ["56%","45%"],
-  "上海": ["62%","50%"],
-  "湖州": ["59%","55%"],
-
-  "张家界": ["45%","57%"],
-  "长沙": ["51%","52%"],
-  "曲靖": ["38%","63%"],
-
-  "深圳": ["54%","66%"],
-  "海口": ["49%","73%"],
-
-  "台北": ["69%","54%"],
-  "台湾": ["66%","61%"],
-  "台南": ["71%","68%"]
-};
-
-fetch("./data/wishes.json")
-  .then(r=>{
-    if(!r.ok) throw new Error("wishes json not found");
-    return r.json();
-  })
-  .then(d=>{
-    wishes=normalizeCities(Array.isArray(d.cities)?d.cities:[]);
-    applyStarLayout();
-    renderCities();
-    updateStats();
-    updateProgress();
-  })
-  .catch(()=>{
-    stats.textContent="资料载入失败，请检查 data/wishes.json";
-  });
-
-function normalizeCities(cities){
-  const cityAlias={
-    "臺北":"台北",
-    "台北市":"台北",
-    "台湾台北":"台北",
-    "台灣台北":"台北",
-    "台湾/台北":"台北",
-    "台灣/台北":"台北",
-    "台湾 台北":"台北",
-    "台灣 台北":"台北",
-    "台湾-台北":"台北",
-    "台灣-台北":"台北",
-    "台南市":"台南",
-    "臺南":"台南",
-    "台湾台南":"台南",
-    "台灣台南":"台南",
-    "台湾/台南":"台南",
-    "台灣/台南":"台南",
-    "台湾 台南":"台南",
-    "台灣 台南":"台南",
-    "台湾-台南":"台南",
-    "台灣-台南":"台南",
-    "台灣":"台湾",
-    "台湾":"台湾",
-    "台湾未注明城市":"台湾",
-    "台灣未註明城市":"台湾",
-    "台湾未註明城市":"台湾",
-    "台灣未注明城市":"台湾",
-    "台湾（未注明城市）":"台湾",
-    "台灣（未註明城市）":"台湾"
-  };
-
-  function cleanText(value){
-    return String(value||"").trim();
-  }
-
-  function compactText(value){
-    return cleanText(value).replace(/[\s·・,，、()（）-]/g,"");
-  }
-
-  function normalizeName(value){
-    const raw=cleanText(value)||"未注明城市";
-    const compact=compactText(raw);
-    return cityAlias[raw]||cityAlias[compact]||raw;
-  }
-
-  function cityFromLocation(location,fallback){
-    const raw=cleanText(location);
-    const compact=compactText(raw);
-
-    // 只填「台湾 / 台灣」时，视为未注明城市，独立放在「台湾」星点。
-    if(cityAlias[raw]||cityAlias[compact]) return cityAlias[raw]||cityAlias[compact];
-
-    // 常见「省份/城市」格式，取最后一段作为城市。
-    if(raw.includes("/") || raw.includes("／")){
-      const parts=raw.split(/[\/／]/).map(v=>v.trim()).filter(Boolean);
-      if(parts.length>1) return normalizeName(parts[parts.length-1]);
+{
+  "cities": [
+    {
+      "name": "南京",
+      "province": "江苏",
+      "fans": [
+        {
+          "id": "wish-01",
+          "name": "归辞辞呀",
+          "icon": "💌",
+          "location": "江苏/南京",
+          "message": "主包生日快乐~要每天开开心心健健康康的呀(=^▽^=)",
+          "avatar": "",
+          "audio": "audio/wish-01.m4a"
+        }
+      ]
+    },
+    {
+      "name": "台南",
+      "province": "台湾",
+      "fans": [
+        {
+          "id": "wish-02",
+          "name": "曉酥",
+          "icon": "🎂",
+          "location": "台湾台南",
+          "message": "大哥祝你生日快樂，健康平安",
+          "avatar": "",
+          "audio": "audio/wish-02.m4a"
+        }
+      ]
+    },
+    {
+      "name": "海口",
+      "province": "海南",
+      "fans": [
+        {
+          "id": "wish-03",
+          "name": "光砸",
+          "icon": "🌺",
+          "location": "海南/海口",
+          "message": "祝大哥年年岁岁平安喜乐，岁岁年年风采依旧，永远青春，永远热泪盈眶，永远少年！一路繁花，直播长红！（如果还是攒不住财，可以放我这，我帮您存着，哈哈哈哈。）",
+          "avatar": "",
+          "audio": "audio/wish-03.mp3"
+        }
+      ]
+    },
+    {
+      "name": "沈阳",
+      "province": "辽宁",
+      "fans": [
+        {
+          "id": "wish-04",
+          "name": "么么",
+          "icon": "🤍",
+          "location": "辽宁/沈阳",
+          "message": "此时无声胜有声，省略十万句",
+          "avatar": "",
+          "audio": "audio/wish-04.m4a"
+        }
+      ]
+    },
+    {
+      "name": "台北",
+      "province": "台湾",
+      "fans": [
+        {
+          "id": "wish-05",
+          "name": "初心的向陽",
+          "icon": "🌻",
+          "location": "台湾/台北",
+          "message": "生日快樂🎂心願達成🎉平安健康~不再花大錢~錢永遠存住留住在自己身上🥳🥳🥳",
+          "avatar": "",
+          "audio": "audio/wish-05.mp3"
+        },
+        {
+          "id": "wish-10",
+          "name": "布丁",
+          "icon": "🐱",
+          "location": "台湾/台北",
+          "message": "亲爱的大哥，生日快乐呀🎂希望新的一岁，你要好好照顾自己。愿你拥有健康的身体、稳定的快乐、热爱的事业，以及始终愿意陪伴你的人。愿你被世界温柔以待，也愿你永远保有最初热爱唱歌的那颗心。🩵",
+          "avatar": "",
+          "audio": "audio/wish-10.mp3"
+        }
+      ]
+    },
+    {
+      "name": "台湾",
+      "province": "台湾",
+      "fans": [
+        {
+          "id": "wish-15",
+          "name": "晴琴",
+          "icon": "🎵",
+          "location": "台湾",
+          "message": "谜屿~爷爷呀~生日快乐~祝你每天都健康平安~喜乐常在~抽抽都白到发光呀~谢谢你每天的陪伴~从刚进猫耳就遇见你到现在~真的是非常的幸运呀~很开心能够来到你的直播间和大家相遇~一听到你唱歌心情都变好了~待着真的很放松~很喜欢待在这里~就是这样！ 爷爷生日快乐呀~天天开心！！！",
+          "avatar": "",
+          "audio": "audio/wish-15.m4a"
+        }
+      ]
+    },
+    {
+      "name": "深圳",
+      "province": "广东",
+      "fans": [
+        {
+          "id": "wish-06",
+          "name": "小韦",
+          "icon": "🎙️",
+          "location": "广东/深圳",
+          "message": "",
+          "avatar": "",
+          "audio": "audio/wish-06.m4a"
+        }
+      ]
+    },
+    {
+      "name": "曲靖",
+      "province": "云南",
+      "fans": [
+        {
+          "id": "wish-07",
+          "name": "小宝",
+          "icon": "🎈",
+          "location": "云南/曲靖",
+          "message": "生日快乐呀！（由于学校不放假，所以没办法回来，小小原谅一下下我吧）",
+          "avatar": "",
+          "audio": "audio/wish-07.mp3"
+        }
+      ]
+    },
+    {
+      "name": "长沙",
+      "province": "湖南",
+      "fans": [
+        {
+          "id": "wish-08",
+          "name": "谜屿是无花爷爷",
+          "icon": "🌙",
+          "location": "湖南/长沙",
+          "message": "认识时间不算长但也不短了，在你这里我是放松的随意的，今天你生日，愿你平安喜乐，收获更多人偏爱和喜欢，所愿皆所得。生日快乐\"爷爷\"",
+          "avatar": "",
+          "audio": "audio/wish-08.mp3"
+        }
+      ]
+    },
+    {
+      "name": "齐齐哈尔",
+      "province": "黑龙江",
+      "fans": [
+        {
+          "id": "wish-09",
+          "name": "微笑",
+          "icon": "😊",
+          "location": "黑龙江/齐齐哈尔",
+          "message": "生日快乐，身体健康，祝大哥开心顺意，越来越帅气，唱歌越来越好听，小耳朵越来越多，哈哈哈哈哈",
+          "avatar": "",
+          "audio": "audio/wish-09.mp3"
+        }
+      ]
+    },
+    {
+      "name": "延边",
+      "province": "吉林",
+      "fans": [
+        {
+          "id": "wish-11",
+          "name": "玄子",
+          "icon": "🫶",
+          "location": "吉林/延边",
+          "message": "哑了就不给你语音祝福了，祝我的命运共同体生日快乐！永远不死（不是）！",
+          "avatar": "",
+          "audio": "audio/wish-11.mp3"
+        }
+      ]
+    },
+    {
+      "name": "上海",
+      "province": "上海",
+      "fans": [
+        {
+          "id": "wish-12",
+          "name": "叮当",
+          "icon": "✨",
+          "location": "上海",
+          "message": "顺遂无虞，皆得所愿",
+          "avatar": "",
+          "audio": "audio/wish-12.mp3"
+        }
+      ]
+    },
+    {
+      "name": "张家界",
+      "province": "湖南",
+      "fans": [
+        {
+          "id": "wish-13",
+          "name": "Eleven_咖啡",
+          "icon": "☕",
+          "location": "湖南/张家界",
+          "message": "生日快乐，今年因为忙现生很少来和大家一起玩，等我空了一定回来，等我嗷！！！！我很期待见到业主群庞大的样子✌🏻",
+          "avatar": "",
+          "audio": "audio/wish-13.m4a"
+        }
+      ]
+    },
+    {
+      "name": "湖州",
+      "province": "浙江",
+      "fans": [
+        {
+          "id": "wish-14",
+          "name": "黑裙独白",
+          "icon": "🖤",
+          "location": "浙江/湖州",
+          "message": "祝福谜屿生日快乐🎉，牙好身体好",
+          "avatar": "",
+          "audio": "audio/wish-14.mp3"
+        }
+      ]
     }
-
-    // 兼容没有分隔符的台湾城市。
-    if(compact.includes("台北") || compact.includes("臺北")) return "台北";
-    if(compact.includes("台南") || compact.includes("臺南")) return "台南";
-
-    return normalizeName(fallback);
-  }
-
-  const cityInfo={};
-  const grouped=[];
-
-  cities.forEach(city=>{
-    const baseName=normalizeName(city.name);
-    const fans=Array.isArray(city.fans)?city.fans:[];
-    fans.forEach(fan=>{
-      const finalName=cityFromLocation(fan.location,baseName);
-      if(!cityInfo[finalName]){
-        cityInfo[finalName]={
-          name:finalName,
-          province:city.province||"",
-          x:city.x,
-          y:city.y,
-          fans:[]
-        };
-        grouped.push(cityInfo[finalName]);
-      }
-      cityInfo[finalName].fans.push(fan);
-    });
-
-    // 防止未来出现只有城市、没有 fans 的资料时整个点消失。
-    if(fans.length===0 && !cityInfo[baseName]){
-      cityInfo[baseName]={...city,name:baseName,fans:[]};
-      grouped.push(cityInfo[baseName]);
-    }
-  });
-
-  return grouped;
+  ]
 }
-
-function applyStarLayout(){
-  wishes.forEach((city,idx)=>{
-    if(starLayout[city.name]){
-      city.x=starLayout[city.name][0];
-      city.y=starLayout[city.name][1];
-    }else{
-      const fallback=[
-        ["42%","42%"],["50%","38%"],["57%","43%"],["46%","50%"],
-        ["54%","56%"],["62%","58%"],["39%","66%"],["67%","45%"]
-      ][idx%8];
-      city.x=city.x||fallback[0];
-      city.y=city.y||fallback[1];
-    }
-  });
-}
-
-function totalFans(){
-  return wishes.reduce((sum,city)=>sum+((city.fans||[]).length),0);
-}
-
-function updateStats(){
-  stats.textContent=`来自 ${wishes.length} 个地方，${totalFans()} 份生日祝福`;
-}
-
-function updateProgress(){
-  progress.textContent=`已点亮 ${collected.size} / ${wishes.length}`;
-  if(collected.size===wishes.length && wishes.length>0){
-    progress.textContent="✨ 所有祝福都已收下";
-  }
-}
-
-function renderCities(){
-  citiesEl.innerHTML="";
-  wishes.forEach((city,i)=>{
-    const btn=document.createElement("button");
-    btn.type="button";
-    btn.className="city";
-    btn.style.setProperty("--x",city.x);
-    btn.style.setProperty("--y",city.y);
-    btn.setAttribute("aria-label",`打开 ${city.name} 的祝福`);
-    btn.innerHTML=`
-      <div class="dot"></div>
-      <div class="city-name">${escapeHTML(city.name)}<small>${(city.fans||[]).length} 份祝福</small></div>
-    `;
-    btn.onclick=()=>openCity(i);
-    citiesEl.appendChild(btn);
-  });
-}
-
-function openCity(i){
-  currentCity=wishes[i];
-  collected.add(currentCity.name);
-  stopAudio();
-
-  document.querySelectorAll(".city").forEach((cityBtn,idx)=>{
-    cityBtn.classList.toggle("active",idx===i);
-    if(collected.has(wishes[idx].name)) cityBtn.classList.add("collected");
-  });
-
-  drawerTitle.textContent="⭐ "+currentCity.name;
-  drawerDesc.textContent=`来自 ${currentCity.name} 的 ${(currentCity.fans||[]).length} 份祝福`;
-  fansEl.style.display="grid";
-  letter.classList.remove("show");
-  ending.classList.toggle("show",collected.size===wishes.length);
-
-  fansEl.innerHTML="";
-  (currentCity.fans||[]).forEach((fan,idx)=>{
-    const b=document.createElement("button");
-    b.type="button";
-    b.className="fan";
-    b.innerHTML=`
-      <div class="avatar">${escapeHTML(fan.icon||"💌")}</div>
-      <strong>${escapeHTML(fan.name||"匿名家人")}</strong>
-      <p>${fan.audio ? "点击打开祝福 · 含语音" : "点击打开祝福"}</p>
-    `;
-    b.onclick=()=>openFan(idx);
-    fansEl.appendChild(b);
-  });
-
-  updateProgress();
-  drawer.classList.add("show");
-}
-
-function openFan(i){
-  const fan=(currentCity.fans||[])[i];
-  stopAudio();
-  fansEl.style.display="none";
-  fanName.textContent=`${fan.icon||"💌"} ${fan.name||"匿名家人"}`;
-  fanMessage.textContent=fan.message || "这是一份语音祝福，点下面按钮收听。";
-  letter.classList.add("show");
-
-  if(fan.audio){
-    audioBox.style.display="block";
-    wishAudio.src=fan.audio;
-    audioBtn.textContent="🎙️ 播放这份祝福";
-  }else{
-    audioBox.style.display="none";
-    wishAudio.removeAttribute("src");
-    wishAudio.load();
-  }
-}
-
-function backToFans(){
-  stopAudio();
-  letter.classList.remove("show");
-  fansEl.style.display="grid";
-}
-
-function closeDrawer(){
-  stopAudio();
-  drawer.classList.remove("show");
-  document.querySelectorAll(".city").forEach(c=>c.classList.remove("active"));
-}
-
-function toggleWishAudio(){
-  if(!wishAudio.src) return;
-
-  if(wishAudio.paused){
-    wishAudio.play()
-      .then(()=>{audioBtn.textContent="⏸️ 暂停播放";})
-      .catch(()=>{audioBtn.textContent="请再点一次播放";});
-  }else{
-    wishAudio.pause();
-    audioBtn.textContent="🎙️ 继续播放";
-  }
-}
-
-function stopAudio(){
-  if(!wishAudio) return;
-  wishAudio.pause();
-  wishAudio.currentTime=0;
-  audioBtn.textContent="🎙️ 播放这份祝福";
-}
-
-wishAudio.addEventListener("ended",()=>{
-  audioBtn.textContent="🔁 再听一次";
-});
-
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape") closeDrawer();
-});
-
-function escapeHTML(value){
-  return String(value)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-</script>
-</body>
-</html>
